@@ -73,7 +73,7 @@ public class Main {
         Human child1 = new Human();
         children.add(child1);
         Family abb = new Family(dad, mom, children1);
-        familyController.getAllFamilies().add(abb);
+        familyController.getAllFamilies().add(abb) ;
 
         System.out.println(familyController.displayAllFamilies());
 
