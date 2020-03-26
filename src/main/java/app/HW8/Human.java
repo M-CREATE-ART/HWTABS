@@ -1,6 +1,7 @@
 package app.HW8;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Human {
     private String name;
@@ -8,6 +9,7 @@ public class Human {
     private Family family;
     private int year;
     private int iq;
+    private HashMap<String, String> schedule = new HashMap<>();
 
     public Human() {
 

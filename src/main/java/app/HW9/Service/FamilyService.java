@@ -6,6 +6,7 @@ import app.HW9.Entity.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class FamilyService {
     CollectionFamilyDao collectionFamilyDao = new CollectionFamilyDao();
@@ -42,7 +43,7 @@ public class FamilyService {
     }
 
     public Family getFamilyById(int id) {
-        return getFamilyByIndex(id-1);
+        return getFamilyByIndex(id - 1);
     }
 
     public List<Family> getFamiliesLessThan(int memberCount) {
@@ -73,12 +74,7 @@ public class FamilyService {
     public Family bornChild(Family family, String masculine, String feminine) {
         int rn = (int) (Math.random() * 2);
         String name = rn == 0 ? masculine : feminine;
-        Human child = new Human();
-        child.setName(name);
-        child.setSurname(family.getFather().getSurname());
-        child.setSchedule(family.getFather().getSchedule());
-        child.setYear(2020);
-        child.setIq(5);
+        Human child = new Human(name, family.getFather().getSurname(), 2020, 0);
         getAllFamilies().get(getAllFamilies().indexOf(family)).addChild(child);
         return family;
     }
@@ -90,11 +86,15 @@ public class FamilyService {
     }
 
     public void deleteAllChildrenOlderThen(int age) {
-        int year = 2020;
-        for (Family family : getAllFamilies()) {
-            family.getChildren().removeIf(child -> age< year - child.getYear());
-            saveFamily(family);
-        }
+        int date = 2020;
+
+        List<Human> children = new ArrayList<>();
+        getAllFamilies().forEach(family -> {
+            children.addAll(family.getChildren()
+                    .stream().filter(child -> age < date - child.getYear()).collect(Collectors.toList()));
+            getAllFamilies().removeAll(children);
+            collectionFamilyDao.saveFamily(family);
+        });
     }
 
     public int count() {
