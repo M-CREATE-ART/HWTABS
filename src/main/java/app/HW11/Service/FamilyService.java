@@ -1,7 +1,7 @@
-package app.HW10.Service;
+package app.HW11.Service;
 
-import app.HW10.Entity.*;
-import app.HW10.Database.CollectionFamilyDao;
+import app.HW11.Database.CollectionFamilyDao;
+import app.HW11.Entity.*;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -9,6 +9,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class FamilyService {
     CollectionFamilyDao collectionFamilyDao = new CollectionFamilyDao();
@@ -36,33 +37,26 @@ public class FamilyService {
     }
 
     public List<Family> getFamiliesBiggerThan(int memberCount) {
-        List<Family> biggerFamily = new ArrayList<>();
-        for (Family family : getAllFamilies()) {
-            if (family.countFamily() > memberCount) biggerFamily.add(family);
-        }
+        List<Family> biggerFamily = getAllFamilies().stream()
+                .filter(family -> family.countFamily() > memberCount).collect(Collectors.toList());
 
         return biggerFamily;
     }
 
     public Family getFamilyById(int id) {
-        return getFamilyByIndex(id-1);
+        return getFamilyByIndex(id - 1);
     }
 
     public List<Family> getFamiliesLessThan(int memberCount) {
-        List<Family> lessFamily = new ArrayList<>();
-        for (Family family : getAllFamilies()) {
-            if (family.countFamily() < memberCount) lessFamily.add(family);
-
-        }
+        List<Family> lessFamily = getAllFamilies().stream()
+                .filter(family -> family.countFamily() < memberCount).collect(Collectors.toList());
 
         return lessFamily;
     }
 
     public List<Family> countFamiliesWithMemberNumber(int memberCount) {
-        List<Family> equFamily = new ArrayList<>();
-        for (Family family : getAllFamilies()) {
-            if (family.countFamily() == memberCount) equFamily.add(family);
-        }
+        List<Family> equFamily = getAllFamilies().stream()
+                .filter(family -> family.countFamily() == memberCount).collect(Collectors.toList());
 
         return equFamily;
     }
