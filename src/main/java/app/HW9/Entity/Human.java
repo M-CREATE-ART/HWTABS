@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class  Human {
     private String name;
     private String surname;
+    private Family family;
     private int year;
     private int iq;
     private HashMap<String, String> schedule = new HashMap<>();
