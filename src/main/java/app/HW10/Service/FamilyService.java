@@ -72,11 +72,8 @@ public class FamilyService {
     public Family bornChild(Family family, String masculine, String feminine) {
         int rn = (int) (Math.random() * 2);
         String name = rn == 0 ? masculine : feminine;
-        Human child = new Human();
-        child.setName(name);
-        child.setSurname(family.getFather().getSurname());
+        Human child = new Human(name, family.getFather().getSurname(), "15/5/1995");
         child.setSchedule(family.getFather().getSchedule());
-        child.setYear(2020);
         child.setIq(5);
         getAllFamilies().get(getAllFamilies().indexOf(family)).addChild(child);
         return family;
@@ -89,9 +86,10 @@ public class FamilyService {
     }
 
     public void deleteAllChildrenOlderThen(int age) {
-        int year = 2020;
         for (Family family : getAllFamilies()) {
-            family.getChildren().removeIf(child -> age< year - child.getYear());
+            List<Human> children = family.getChildren();
+            int date = 2020;
+            children.removeIf(ch -> age < (date - ch.getBirthDate()));
             saveFamily(family);
         }
     }

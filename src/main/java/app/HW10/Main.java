@@ -30,8 +30,8 @@ public class Main {
         schedule.put(DayOfWeek.SUNDAY.name(),
                 "do not go out");
 
-        Man father = new Man("Mehman", "Abdull", 1974, 190);
-        Woman mother = new Woman("Faxranda", "Abdull", 1976, 190);
+        Man father = new Man("Mehman", "Abdull", "15/03/1974", 190);
+        Woman mother = new Woman("Faxranda", "Abdull", "10/05/2000", 190);
 
         ArrayList<Human> children = new ArrayList<>();
 
@@ -39,8 +39,8 @@ public class Main {
 
         Set<Pet> pets = new HashSet<>();
 
-        Human maryam = new Human("Maryam", "Mammadzadeh", 1998, 157);
-        Human gulshan = new Human("Gulshan", "Mammadzadeh", 1997, 161);
+        Human maryam = new Human("Maryam", "Mammadzadeh", "20/09/1998", 157);
+        Human gulshan = new Human("Gulshan", "Mammadzadeh", "08/08/1997", 161);
         children.add(maryam);
         children.add(gulshan);
         familyController.saveFamily(abdull);
@@ -66,8 +66,8 @@ public class Main {
         System.out.println("FamilyAfterDelete");
 
         System.out.println(familyController.getAllFamilies());
-        Man dad = new Man("Meh", "Abb", 1970, 199);
-        Woman mom = new Woman("Fax", "Abb", 1972, 199);
+        Man dad = new Man("Meh", "Abb", "03/03/1995", 199);
+        Woman mom = new Woman("Fax", "Abb", "15/07/2001", 199);
 
         ArrayList<Human> children1= new ArrayList<>();
         Human child1 = new Human();
@@ -79,8 +79,8 @@ public class Main {
 
         familyController.bornChild(abb, "Alex", "Alexandra");
         Human adoptChild= new Human();
-        Human anna = new Human("Anna", "Abb", 1999, 157);
-        Human annal = new Human("Annal", "Abb", 1996, 161);
+        Human anna = new Human("Anna", "Abb", "12/02/1995", 157);
+        Human annal = new Human("Annal", "Abb", "15/05/1996", 161);
         children1.add(anna);
         children1.add(annal);
         familyController.adoptChild(abb, adoptChild);

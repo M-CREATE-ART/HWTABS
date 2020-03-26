@@ -7,12 +7,12 @@ public final class Man extends Human {
     public Man() {
     }
 
-    public Man(String name, String surname, int year, int iq) {
-        super(name, surname, year, iq);
+    public Man(String name, String surname, String birthDate, int iq) {
+        super(name, surname, birthDate, iq);
     }
 
-    public Man(String name, String surname, int year, int iq, Family family) {
-        super(name, surname, year, iq, family);
+    public Man(String name, String surname, String birthDate, int iq, Family family) {
+        super(name, surname, birthDate, iq, family);
     }
 
     public String repairCar(){

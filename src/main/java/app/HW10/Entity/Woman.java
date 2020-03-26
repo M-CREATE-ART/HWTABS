@@ -6,12 +6,12 @@ public final class Woman extends Human {
  public Woman() {
  }
 
- public Woman(String name, String surname, int year, int iq) {
-  super(name, surname, year, iq);
+ public Woman(String name, String surname, String birthDate, int iq) {
+  super(name, surname, birthDate, iq);
  }
 
- public Woman(String name, String surname, int year, int iq, Family family) {
-  super(name, surname, year, iq, family);
+ public Woman(String name, String surname, String birthDate, int iq, Family family) {
+  super(name, surname, birthDate, iq, family);
  }
 
  public String makeUp(){
