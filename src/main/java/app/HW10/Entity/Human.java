@@ -1,4 +1,4 @@
-package app.HW9.Entity;
+package app.HW10.Entity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class  Human {
     private String name;
     private String surname;
-    private int year;
+    private long birthDate;
     private int iq;
     private HashMap<String, String> schedule = new HashMap<>();
 
@@ -26,7 +26,7 @@ public class  Human {
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-     
+
     }
 
     public String getName() {
