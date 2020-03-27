@@ -1,7 +1,7 @@
-package app.HW11.Service;
+package app.HW12.Service;
 
-import app.HW11.Database.CollectionFamilyDao;
-import app.HW11.Entity.*;
+import app.HW12.Database.CollectionFamilyDao;
+import app.HW12.Entity.*;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -32,7 +32,7 @@ public class FamilyService {
 
     public String displayAllFamilies() {
         StringBuilder familyString = new StringBuilder();
-        getAllFamilies().forEach(family -> familyString.append(family));
+        getAllFamilies().forEach(family -> familyString.append(family.prettyFormat()));
         return familyString.toString();
     }
 
