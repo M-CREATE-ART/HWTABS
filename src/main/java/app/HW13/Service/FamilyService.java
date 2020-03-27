@@ -110,6 +110,7 @@ public class FamilyService {
         collectionFamilyDao.loadData();
     }
 
+    public  void  getData(){ collectionFamilyDao.getData();}
 
 
 }

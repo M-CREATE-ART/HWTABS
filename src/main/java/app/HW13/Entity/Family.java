@@ -18,6 +18,13 @@ public class Family {
 
     }
 
+    public Family(Man father, Woman mother, ArrayList<Human> children, Set<Pet> pets) {
+        this.father = father;
+        this.mother = mother;
+        this.children = children;
+        this.pets = pets;
+    }
+
     public Human getFather() {
         return father;
     }
@@ -99,7 +106,7 @@ public class Family {
 
     public String petToFile() {
         StringBuilder sb = new StringBuilder();
-        pets.forEach(pet -> sb.append(pet.petToFile()).append(","));
+        pets.forEach(pet -> sb.append(pet.petToFile()).append("~"));
         return sb.toString();
     }
 

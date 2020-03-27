@@ -76,4 +76,8 @@ public class FamilyController {
     public void loadData() {
         familyService.loadData();
     }
+
+    public void getData() {
+        familyService.getData();
+    }
 }
