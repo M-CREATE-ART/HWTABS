@@ -14,7 +14,7 @@ public class Main {
 
 
         StringBuilder sb = new StringBuilder();
-        sb.append("\n1. Fill the test data\n");
+        sb.append("\n1. Load the data\n");
         sb.append("2. Display the entire list of families\n");
         sb.append("3. Display a list of families where the number of people is greater than the specified number\n");
         sb.append("4. Display a list of families where the number of people is less than the specified number\n");
