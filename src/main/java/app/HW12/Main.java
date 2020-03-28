@@ -80,7 +80,7 @@ public class Main {
 
                     System.out.println("Test data is filled successfully:)");
                     System.out.println("Please press enter to go back to main menu. \n");
-                    command = scanner.next();
+                    command = scanner.nextLine();
 
                     break;
                 }
@@ -88,7 +88,7 @@ public class Main {
                 case "2": {
                     System.out.println(familyController.displayAllFamilies());
                     System.out.println("Please press enter to go back to main menu. \n");
-                    command = scanner.next();
+                    command = scanner.nextLine();
 
                     break;
                 }
@@ -99,10 +99,10 @@ public class Main {
                         int count = scanner.nextInt();
                         familyController.getFamiliesBiggerThan(count).forEach(family -> System.out.println(family.prettyFormat()));
                         System.out.println("Please press enter to go back to main menu. \n");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     } catch (Exception e) {
                         System.out.println("You entered incorrect value. Please press enter to go back to main menu");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     }
 
                     break;
@@ -114,10 +114,10 @@ public class Main {
                         int count1 = scanner.nextInt();
                         familyController.getFamiliesLessThan(count1).forEach(family -> System.out.println(family.prettyFormat()));
                         System.out.println("Please press enter to go back to main menu. \n");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     } catch (Exception e) {
                         System.out.println("You entered incorrect value. Please press enter to go back to main menu");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     }
 
                     break;
@@ -129,10 +129,10 @@ public class Main {
                         int count2 = scanner.nextInt();
                         familyController.countFamiliesWithMemberNumber(count2).forEach(family -> System.out.println(family.prettyFormat()));
                         System.out.println("Please press enter to go back to main menu. \n");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     } catch (Exception e) {
                         System.out.println("You entered incorrect value. Please press enter to go back to main menu");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     }
 
                     break;
@@ -178,12 +178,12 @@ public class Main {
                         familyController.addPet(familyController.getAllFamilies().size() - 1, rock);
 
                         System.out.println("Family created successfully :). Please press enter to go back to main menu.");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     } catch (Exception e) {
                         System.out.println("You entered incorrect value. Please press enter to go back to main menu");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     }
-
+                    break;
                 }
 
                 case "7": {
@@ -194,14 +194,15 @@ public class Main {
 
                     } catch (Exception e) {
                         System.out.println("You entered incorrect value. Please press enter to go back to main menu");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     }
+                    break;
                 }
 
                 case "8": {
                     try {
 
-                    System.out.println("Choose the option \n 1.Give birth to a baby. \n 2.Adopt a child. \n 3.Return to main menu");
+                        System.out.println("Choose the option \n 1.Give birth to a baby. \n 2.Adopt a child. \n 3.Return to main menu");
 
 
                         System.out.print("Please enter your option by index: ");
@@ -217,7 +218,7 @@ public class Main {
                                 familyController.bornChild(familyController.getFamilyByIndex(ID1), boyName, girlName);
                                 System.out.println("Successfully added");
                                 System.out.println(" Please press enter to go back to main menu");
-                                command = scanner.next();
+                                command = scanner.nextLine();
 
                                 break;
                             }
@@ -241,34 +242,35 @@ public class Main {
                                 familyController.adoptChild(familyController.getFamilyByIndex(ID2), child);
                                 System.out.println("Successfully added");
                                 System.out.println(" Please press enter to go back to main menu");
-                                command = scanner.next();
+                                command = scanner.nextLine();
 
                                 break;
                             }
                             case "3": {
                                 System.out.println(" Please press enter to go back to main menu");
-                                command = scanner.next();
+                                command = scanner.nextLine();
                             }
                         }
 
-                            break;
+                        break;
 
-                    }catch (Exception e) {
+                    } catch (Exception e) {
                         System.out.println("You entered incorrect value. Please press enter to go back to main menu");
-                        command = scanner.next();
+                        command = scanner.nextLine();
 
                     }
+                    break;
                 }
                 case "9": {
                     try {
                         System.out.println("Enter the age of children that you wanted to delete");
-                        int age= scanner.nextInt();
+                        int age = scanner.nextInt();
                         familyController.deleteAllChildrenOlderThen(age);
                         System.out.println("Successfully deleted");
 
-                    }catch (Exception e) {
+                    } catch (Exception e) {
                         System.out.println("You entered incorrect value. Please press enter to go back to main menu");
-                        command = scanner.next();
+                        command = scanner.nextLine();
                     }
 
                     break;
@@ -276,13 +278,13 @@ public class Main {
 
                 }
 
-                case "10":{
+                case "10": {
                     System.out.println(" You are exited from the program  ");
                 }
 
                 default:
                     System.out.println("You entered incorrect command. Please press enter to go back to main menu");
-                    command = scanner.next();
+                    command = scanner.nextLine();
 
 
             }
